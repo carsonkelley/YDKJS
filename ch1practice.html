@@ -4,11 +4,19 @@
   const TAX_RATE = .08;
   const PHONE_PRICE = 199.99;
   const ACC_PRICE = 19.79;
+  const SPEND_THRESH = 400;
   var bankBalance = 4500;
+  var purchaseAmount = 0;
 
-  
+  while(purchaseAmount + PHONE_PRICE < bankBalance) {
+    purchaseAmount += PHONE_PRICE;
+    if(purchaseAmount < SPEND_THRESH) {
+      purchaseAmount += ACC_PRICE;
+    }
+  }
 
 
+  console.log(purchaseAmount);
 
 
 </script>
