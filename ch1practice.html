@@ -14,9 +14,23 @@
       purchaseAmount += ACC_PRICE;
     }
   }
+  purchaseAmount += calculateTax(purchaseAmount);
 
-
-  console.log(purchaseAmount);
+  function calculateTax(amt) {
+      return amt * TAX_RATE;
+  }
+  function makePretty(amt) {
+    return "$" + amt.toFixed(2);
+  }
+  function canAfford(amt) {
+    if(amt < bankBalance) {
+      return "I can afford to buy all these phones for no reason";
+    } else {
+      return "Can't afford all these phones :/";
+    }
+  }
+  console.log(makePretty(purchaseAmount));
+  console.log(canAfford(purchaseAmount));
 
 
 </script>
