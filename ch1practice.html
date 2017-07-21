@@ -5,7 +5,7 @@
   const PHONE_PRICE = 199.99;
   const ACC_PRICE = 19.79;
   const SPEND_THRESH = 400;
-  var bankBalance = 4500;
+  var bankBalance = prompt("How much money do you have?");
   var purchaseAmount = 0;
 
   while(purchaseAmount + PHONE_PRICE < bankBalance) {
@@ -24,13 +24,18 @@
   }
   function canAfford(amt) {
     if(amt < bankBalance) {
-      return "I can afford to buy all these phones for no reason";
+      return "You can afford to buy all these phones for no reason";
     } else {
       return "Can't afford all these phones :/";
     }
   }
-  console.log(makePretty(purchaseAmount));
-  console.log(canAfford(purchaseAmount));
+  if(purchaseAmount > 0) {
+    alert("This is gonna cost like " + makePretty(purchaseAmount));
+    alert(canAfford(purchaseAmount));
+  } else {
+    alert("You can't even afford one phone!");
+  }
+
 
 
 </script>
